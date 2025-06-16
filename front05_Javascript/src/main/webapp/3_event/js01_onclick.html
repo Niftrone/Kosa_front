@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Onclick=()함수</title>
+<script>
+function push(){
+	//1. content 영역을 받아와서
+	let text = document.querySelector("#content");
+	
+	//2. 1번의 영역이 Hello JavaScript내용으로 변경
+	// 글자색을 crimson으로 변경
+	text.innerHTML = "<h3><font color='crimson'>Hello JavaScript</font></h3>";
+}
+
+</script>
+</head>
+<body>
+<h1>JavaScript 란?</h1>
+<p id="content">A computer program is a list of "instructions" to be "executed" by a computer.</p>
+<button onclick="push()">CLICK</button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- 
+chartJs는 chart를 만드는 자바스크립트 라이브러리
+라이브러리 연결
+1)압축파일을 우리 프로젝트에 저장
+2)라이브러리가 들어있는 사이트주소를 바로 연결 --- CDN
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Chart</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<div>
+	<canvas id="myChart"></canvas>
+</div>
+
+<!-- 
+new Chart()는 
+ctx, { }
+
+{ } 안에는
+type, data(labels, datasets, options) 로 구성
+ -->
+
+</body>
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar', //bar, line, pie, scatter가 대표적
+    data: {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'], //x축의 범례	
+      datasets: [{
+        label: '# of Votes',
+        data: [12, 19, 3, 5, 2, 3], //labels의 갯수와 일치, y축의 값
+        borderWidth: 1
+      }]
+  	
+    }
+  });
+</script>
+</html>
+

@@ -1,0 +1,46 @@
+<!-- 
+자바스크립트에서 함수를 정의하는 방법
+
+
+1)선언적 함수 정의
+2)익명 함수 정의
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//1. 선언적 함수 정의
+func(); // 선언적 함수의 정의는 function을 먼저 메모리에 올려서 에러나지 않고 정상동작함
+
+function func() {
+	alert("func A...");
+}
+
+function func() {
+	alert("func B...");
+} 
+
+//2. 익명함수 정의
+
+//func(); 메모리 올라오기전에 호출로 인한 에러
+
+/* var func = function() {
+	alert("func A");
+}
+
+var func = function() {
+	alert("func B");
+}
+func();
+ */
+</script>
+</body>
+</html>
+
+
+

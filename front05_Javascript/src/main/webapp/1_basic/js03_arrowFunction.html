@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+//es6문법(ECMA 2015)
+	var func = () => {
+		alert("익명함수 호출"); //익명 함수를 나중에 올라감
+	}
+	
+	function func() {
+		alert("선언적 호출"); //먼저 메모리에 올라가고
+	}
+	
+	func();
+</script>
+</body>
+</html>

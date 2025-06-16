@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Toggle :: 껐다 | 켰다</title>
+</head>
+<body>
+<h2>
+	Examples in Each Chapter
+</h2>
+<p>
+	With our "Try it Yourself" editor, you can edit the source code and view the result.
+</p>
+<p>
+	We recommend reading this tutorial, in the sequence listed in the menu. If you have a large screen, the menu will always be present on the left.
+</p>
+
+<button id="turnOn">Turn on the light</button>
+<img style="width: 150px"
+	src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjIqomV_U0yzzlg3NlB5qtbYCJQRj3AulUA&usqp=CAU">
+<button id="turnOff">Turn off the light</button>
+</body>
+<script>
+let status = true;
+
+const img = document.querySelector("img");
+
+document.querySelector("button").onclick = toggle;
+
+function toggle(){
+	if(status){
+		img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkhVXo0PStCaz-E5mudcAtsDhV53vPXqpUFQ&usqp=CAU";
+		status = false;
+	}else{
+		img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBjIqomV_U0yzzlg3NlB5qtbYCJQRj3AulUA&usqp=CAU";
+		status = true;
+	}	
+}
+
+</script>
+</html>

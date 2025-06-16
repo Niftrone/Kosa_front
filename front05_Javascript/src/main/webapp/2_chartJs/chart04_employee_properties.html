@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<style type="text/css">
+
+h1{
+	margin-left: 250px;
+}
+
+.chart-container{
+	width: 350px;
+	height: 350px;
+	
+	border: 1px solid #ddd;
+	padding: 40px;
+	border-radius: 8px;
+	
+	display: flex;
+	display: inline-block;
+	justify-content: space-around;
+	margin-top: 100px;
+	margin-left: 100px;
+}
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+<div class="container">
+	<h1>Employee's Salary And Bonus</h1>
+	
+	<div class="chart">
+		<div class="chart-container">
+			<canvas id="line-chart"></canvas>
+		</div>
+		
+		<div class="chart-container">
+			<canvas id="bar-chart"></canvas>
+		</div>
+	</div>
+</div>
+
+<script>
+const ctx = document.getElementById("line-chart");
+const ename = ["SMITH,", "FORD", "TUNER", "KING", "ADAMS"];
+
+let emp_sal_data = {
+		label:"Employee Salary" ,
+		data:[
+			800, 2300, null, 5000, 3000
+		],
+	//그래프 안의 배경색
+		backgroundColor:['#DA6C6C'],
+		borderColor: 'rgba(255,2,3,1)',
+		borderWidth:4,
+	// chart를 그리는데 있어서 중요한 속성들..ChartType < Line Chart < Dataset Properties
+		//1. point 스타일 바꾸기
+		pointStyle: "rectRounded",
+		
+		//2. 그래프의 선을 없애고 값만 나오게
+		/* showLine: false, */
+		
+		//3. Tunner가 인턴사원이라 급여, 보너스 값이 null 임
+		spanGaps: true,
+		stepped: true,
+}
+
+let emp_bonus_data = {
+		label:"Employee Bonus" ,
+		data:[
+			100, 50, null, 0, 60
+		],
+		
+		//그래프 안의 배경색
+		backgroundColor:[
+			'rgba(2,255,3,0.3)'
+		],
+		borderColor: 'rgba(2,255,3,1)',
+		borderWidth:4,
+		pointStyle: "rectRounded",
+		spanGaps: true,
+		stepped: true,
+}
+
+let config = {
+		type: "line",
+		data:{
+			labels: ename,
+			datasets: [emp_sal_data, emp_bonus_data]
+		},
+		options:{
+			maintainAspectRatio: false,
+		}
+}
+
+
+new Chart(ctx, config);
+
+const ctx2 = document.getElementById("bar-chart");
+
+let emp_sal_data2 = {
+		label:"Employee Salary" ,
+		data:[
+			800, 2300, null, 5000, 3000
+		],
+	//그래프 안의 배경색
+		backgroundColor:['#DA6C6C'],
+		borderColor: 'rgba(255,2,3,1)',
+		borderWidth:4,
+
+}
+
+let emp_bonus_data2 = {
+		label:"Employee Bonus" ,
+		data:[
+			100, 50, null, 0, 60
+		],
+		
+		//그래프 안의 배경색
+		backgroundColor:[
+			'rgba(2,255,3,0.3)'
+		],
+		borderColor: 'rgba(2,255,3,1)',
+		borderWidth:4,
+
+}
+
+let config2 = {
+		type: "bar",
+		data:{
+			labels: ename,
+			datasets: [emp_sal_data, emp_bonus_data]
+		},
+		options:{
+			maintainAspectRatio: false,
+		}
+}
+
+new Chart(ctx2, config2);
+
+</script>
+
+</body>
+</html>

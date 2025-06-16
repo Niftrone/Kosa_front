@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.edit{
+	display: none;
+}
+</style>
+
+<script type="text/javascript">
+/* script 부분 완성
+1. 버튼을 클릭하면 span 영역이 보이도록 작성
+2. id가 today인 영역의 내용을 Hello Everyone으로 변경
+	글자색은 블루
+3. id edu인 영역의 내용을 ChartJs 수업 으로 변경
+*/
+const push=(command) => {
+	document.querySelector(".edit").style.display=command;
+	
+	let x = document.querySelector("#today");
+	x.innerText = "Hello Everyone";
+	x.style.color = "blue";
+	
+	let y = document.querySelector("#edu");
+	y.innerText="ChartJs 수업";
+	y.style.color="blue";
+	
+	//form에 값을 입력하거나 입력된 값을 받아올때..value
+	/* document.getElementById("name").value = "James";  */
+	document.querySelector("#name").value = "James"; 
+}
+
+</script>
+
+</head>
+<body>
+<h2 id="today">오늘은 금요일입니다.</h2>
+<h2 id="edu">KOSA 금요일 자바스크립트 수업</h2>
+<hr>
+<button onclick="push('block')">Input Name</button>
+<span class="edit">Name <input type="text" name="name" id="name"></span>
+</body>
+
+</html>

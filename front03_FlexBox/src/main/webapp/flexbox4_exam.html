@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>FlexBox Example</title>
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+
+	body{
+		width: 960px;
+		margin: 0 auto;
+	}
+	h2{
+		text-align: center;
+	}
+	.playlists{
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+	}
+	
+	.playlist{
+		display: flex;
+		flex-direction: column;
+	}
+	
+	.playlist-tumb{
+		border-radius: 20px;
+	}
+	
+	.playlist-title{
+		padding: 10px 0px;
+		font-size: 25px;
+		font-weight: bold;
+		color: gray;
+	}
+	
+	.playlist-artist{
+		color: gray;
+	}
+	
+</style>
+</head>
+<body>
+	<section>
+		<h2 class="section-title">이달의 여행 플레이리스트</h2>
+		<div class="playlists">
+			<div class="playlist">
+				<img class="playlist-tumb" alt="" src="img/p1.jpg">
+				<div class="playlist-title">
+					몰디브 해안에서
+				</div>
+				<div class="playlist-artist">
+					아이유
+				</div>
+			</div>
+			
+			<div class="playlist">
+				<img class="playlist-tumb" alt="" src="img/p2.jpg">
+				<div class="playlist-title">
+					에메랄드빛 고향
+				</div>
+				<div class="playlist-artist">
+					박보검
+				</div>
+			</div>
+			
+			<div class="playlist">
+				<img class="playlist-tumb" alt="" src="img/p3.jpg">
+				<div class="playlist-title">
+					힐링 그곳에 가자
+				</div>
+				<div class="playlist-artist">
+					손흥민
+				</div>
+			</div>
+			
+			<div class="playlist">
+				<img class="playlist-tumb" alt="" src="img/p4.jpg">
+				<div class="playlist-title">
+					여행을 떠나요
+				</div>
+				<div class="playlist-artist">
+					안세영
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

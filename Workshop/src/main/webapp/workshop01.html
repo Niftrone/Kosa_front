@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>WorkShop1</title>
+<style type="text/css">
+	#wrap{
+		margin: 0 auto;
+		border: 5px solid red;
+		width: 700px;
+		height: 830px;
+		border-radius: 10px;
+	}
+
+	
+	h3,img{
+		text-align: center;
+		display: block;
+  		margin: 0 auto;
+  		margin-top: 20px;
+	}
+	
+	form{
+		margin-left: 50px;
+		text-align: left;
+		width: 600px;
+		padding: 20px;
+	}
+	
+	label, form>input, #option_field{
+		margin-top: 20px;
+	}
+	
+	img{
+		width: 300px;
+		height: 400px;
+	}
+	
+	.underline {
+      text-decoration: underline;
+    }
+    .strikethrough {
+      text-decoration: line-through;
+    }
+	
+</style>
+<script type="text/javascript">
+window.onload = function () {
+	const radios = document.querySelectorAll('input[name="time"]');
+	const price5000 = document.getElementById('price5000');
+	const price9000 = document.getElementById('price9000');
+	
+	function updatePrices(selectedValue) {
+	  const isFirst = selectedValue === "08:30";
+	
+	  if (isFirst) {
+	    price5000.className = "underline";
+	    price9000.className = "strikethrough";
+	  } else {
+	    price5000.className = "strikethrough";
+	    price9000.className = "underline";
+	  }
+	}
+	
+	// 초기 실행
+	updatePrices(document.querySelector('input[name="time"]:checked').value);
+	
+	// 이벤트 리스너 등록
+	radios.forEach(radio => {
+	  radio.addEventListener('change', () => {
+	    updatePrices(radio.value);
+	  });
+	});
+};
+</script>
+</head>
+<body>
+<fieldset id="wrap">
+	<h3>★★★★인사이드 아웃2★★★★</h3>
+	<img alt="인사이드아웃2" src="image/inside.jpg">
+	<form action="" id="timeForm">
+		<label>상영관</label> 
+		<select id="cinema">
+			<option value="CGV">CGV</option>
+			<option value="LT">롯데시네마</option>
+			<option value="cinema">영화관</option>
+			<option value="cinema2">영화관2</option>
+		</select>
+		<label>날짜 선택</label> <input type="date" id="mdate">
+		<br>
+		<fieldset>
+			<legend>시간선택</legend>
+		    <input type="radio" name="time" value="08:30" checked> 08:30
+		    <input type="radio" name="time" value="11:00"> 11:00
+		    <input type="radio" name="time" value="14:20"> 14:20
+		    <input type="radio" name="time" value="17:25"> 17:25
+		    <input type="radio" name="time" value="20:10"> 20:10
+		    <input type="radio" name="time" value="23:05"> 23:05
+		</fieldset>
+		<br>
+			요금<span>
+				<span id="price9000">₩9,000</span> &sbquo;
+				<span id="price5000">₩5,000</span>
+			</span>
+			
+			<br>
+			인원 <input type="text" id="count" value=0> 
+			<br>
+			금액 <input type="text" id="count" value=0> 
+			<br>
+			<input type="checkbox" id="option_check" value="option"> 옵션
+			<fieldset id="option_field">
+			<input type="checkbox" id="food" value="popcorn"> 팝콘
+			<input type="checkbox" id="food" value="coke"> 콜라
+		</fieldset>
+	</form>	
+</fieldset>
+</body>
+</html>

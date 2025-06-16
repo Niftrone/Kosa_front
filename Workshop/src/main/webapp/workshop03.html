@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+      <title>KOSA CSS</title>
+
+<style type="text/css">
+	body{
+		box-sizing: border-box;
+		background: black;
+	}
+	
+	*{
+		color: white;
+	}
+	
+	header > img{
+		width: 25px;
+		height: 25px;
+		margin-left: 10px;
+	}
+	
+	.artist, .description{
+		margin-bottom: 15px;
+		color: #656573;
+	}
+	
+	header{
+		display: flex;
+		margin-left: 10px;
+	}
+	
+	main{
+		margin-left: 60px;
+		margin-top: 80px;
+	}
+	
+	.cover{
+		width: 250px;
+		height: 250px;
+		overflow: hidden;
+	}
+	
+	.cover-image {
+		width: 100%;
+		height: 100%;
+		border-radius: 20px;
+	}
+	
+	.hot-badge{
+		padding: 4px;
+		color: #F19D1B;
+		font-size: 15px;
+		background-color: #787878;
+		border-radius: 5px;
+	}
+	
+	.artist{
+		display: flex;
+		width: 200px;
+		height: 50px;
+		font-size: 15px;
+		align-items: flex-end;
+		gap: 10px;
+	}
+	
+	.artist > img{
+		width: 25%;
+		height: 100%;
+		border-radius: 10px;
+	}
+	
+	.play-button{
+		width: 160px;
+		height: 50px;
+		background: #4B1BB0;
+		border-radius: 10px;
+		border: 1px solid black;
+	}
+    
+    hr{
+    	margin-top: 20px;
+    	border:1px solid blue;
+    }
+    
+</style>
+</head>
+<body>
+    <header>
+      <div class="wrap">KOSA Music</div>
+      <img alt="코사로그" src="image/logo.jpg">
+    </header>
+    <main class="wrap">
+      <div class="info">
+        <div class="cover">
+          <img
+            class="cover-image"
+            src="image/cafe.jpg"
+            alt="카페에서 일할 때 커버 이미지"
+         >
+        </div>
+        <h1 class="playlist-title">
+          카페에서 일할 때
+          <span class="hot-badge"> 인기 </span>
+        </h1>
+        <div class="artist">
+          <img
+            src="image/logo (1).png"
+            alt="kosa 프로필"
+            class="artist-profile"
+         >
+          	Kosa Coffee
+        </div>
+        <div class="description">
+          차분하게 흐르는 따뜻한 음악과 함께하는 휴식.KOSA Music 에디터가
+          매달 업데이트하는 플레이리스트입니다. 마음에 드는 곳이 있다면 보관함에
+          추가해 보세요.
+        </div>
+        <button class="play-button">▶️ 지금 듣기</button>
+        <br>
+        <hr>
+      </div>
+    </main>
+  </body>
+</html>

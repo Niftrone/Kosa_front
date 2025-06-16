@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>복합연산자</title>
+<script type="text/javascript">
+/*
+ 브라우저 메모리에 HTML document가 다 로드 될때까지 이부분이 작동하지 않는다.
+ */
+window.onload=()=>{
+	var list = '';
+	list += '<ul>';
+	list += '<li>아메리카노</li>';
+	list += '<li>카페라떼</li>';
+	list += '<li>카라멜 마키아또</li>';
+	list += '<li>카라멜모카</li>';
+	list += '</ul>';
+	
+	/* document.getElementById("wrap").innerHTML= list; */
+	document.querySelector("#wrap").innerHTML = list;	
+};
+
+</script>
+</head>
+<body>
+<h2 align="center">===========onload===========</h2>
+
+<div id="wrap">
+</div>
+
+</body>
+</html>

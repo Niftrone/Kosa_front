@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+body{
+	margin: 0 auto;
+	width: 950px;
+	height: 850px;
+	border: 2px dotted gray;	
+}
+
+#header, h1{
+	color: red;
+}
+
+#header, #menu, #footer{
+	text-align: center;
+}
+
+#menu > ul{
+	list-style-type: none;
+	list-style: none;
+}
+
+#wrap{
+	display: flex;
+	padding: 15px;
+}
+
+#section1{
+	flex:0.22;
+	padding-left: 10px;
+	padding-right: 20px;
+}
+
+#article{
+	flex:0.78;
+}
+
+#footer{
+	color: blue;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Scope Tag :: div(block tag) | span(inline tag)</title>
+</head>
+<body>
+
+<h2>영역을 지정하는 태그 :: div | span</h2>
+
+<hr>
+
+<div>
+	DIV SCOPE 1
+</div>
+
+<div>
+	DIV SCOPE 2
+</div>
+<hr>
+<span>
+	span SCOPE 1
+</span>
+<span>
+	span SCOPE 2
+</span>
+
+<hr>
+span SCOPE 1                         span SCOPE 2
+<hr>
+span SCOPE 1
+
+
+
+
+span SCOPE 2
+<hr>
+<!-- html은 space bar 혹은 Enter키가 적용되지 않는다 -->
+span SCOPE 1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;span SCOPE 2
+
+<hr>
+<pre>
+span SCOPE 1              span SCOPE 2           span SCOPE 3
+
+span SCOPE 4
+</pre>
+<h2>이미지 지정하기</h2>
+<img alt="인사이드아웃2" src="image/inside.jpg">
+<img alt="인사이드아웃2" src="image/inside.jpg" width="30%">
+<img alt="인사이드아웃2" src="image/inside.jpg" width="500px">
+</body>
+</html>

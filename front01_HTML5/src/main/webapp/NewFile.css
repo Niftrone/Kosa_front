@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/* body{
+	width: 800px;
+	height: 500px;
+	border: 1px solid gray;
+} */
+
+#wrap{
+	width: 800px;
+	height: 500px;
+	border: 3px dotted gray;
+	margin: 0 auto;
+}
+
+#header{
+	text-align: center;
+	color: crimson;
+	font-weight: bold;
+}
+
+#order{
+	float: left;
+	width: 250px;
+	margin-left: 90px;
+	
+}
+
+#unorder{
+	float: right;
+	width: 250px;
+	margin-right: 70px;
+}
+
+#order, #unorder{
+	margin-top: 50px;
+	font-size: 17px;
+	border: 2px dashed #0000a0;
+	padding: 20px;
+	background-color: rgba(255,59,85,0.3); 
+	border-radius: 20px;
+}

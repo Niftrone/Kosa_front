@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Form Tag</title>
+<style type="text/css">
+
+h2{
+	text-align: center;
+	color: maroon;
+	font-size: 40px;
+}
+
+fieldset{
+	width: 600px;
+	margin: 0 auto;
+}
+
+legend {
+	color : red;
+	font-size: 30px;
+	font-style: inherit;
+}
+
+form{
+	padding: 50px;
+}
+
+</style>
+
+</head>
+<body>
+
+<h2>HTML Form Tag</h2>
+
+<fieldset>
+	<legend>Employee Information FormData</legend>
+	<form action="#">
+		ID : <input type="text" name="userId" value="kosa" readonly="readonly"> <br>
+		PASS : <input type="password" name="userPass"> <br>
+		Gender :
+			<input type="radio" name="userGender" value="Female"> F
+			<input type="radio" name="userGender" value="male"> M
+		<br><br>
+		
+		Today : <input type="date" name="today">
+		<br><br>
+		Number : <input type="number" name= "number">
+		<br><br>
+		Guest Memo ::
+		<textarea rows="5" cols="50">
+		intro memo....
+		</textarea>
+		<br><br>
+		<!-- 
+		Submit 버튼
+		1) 폼에 입력된 모든 값을 가지고 전송됨
+		2) action에 연결된 서버상의 프로그램을 1)로 전달
+		 -->
+		
+		<input type="submit" value="DataSend">
+	</form>
+</fieldset>
+</body>
+</html>

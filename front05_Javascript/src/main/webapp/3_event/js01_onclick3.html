@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3. addEventListener</title>
+</head>
+<body>
+<h1>JavaScript 란?</h1>
+<p id="content">A computer program is a list of "instructions" to be "executed" by a computer.</p>
+<button>CLICK</button>
+</body>
+<script>
+
+let btn = document.querySelector("button");
+
+btn.addEventListener("click",()=>{
+	let text = document.querySelector("#content");
+	text.innerHTML = "<h3><font color='crimson'>Hello JavaScript</font></h3>";
+});
+
+</script>
+</html>

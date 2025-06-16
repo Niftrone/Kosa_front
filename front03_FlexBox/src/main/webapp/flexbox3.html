@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--
+	교차측으로 배치
+	가운데 정렬
+  -->
+
+<style type="text/css">
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		background-color: #f9fafc;
+		margin: 60px;
+	}
+	.container{
+		border: 5px dashed #cacfd9;
+		width: 500px;
+		height: 500px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 10px;
+	}
+	
+	.box{
+		border-radius: 15px;
+		color: #f9fafc;
+		padding: 30px;
+	}
+	.red{
+		flex: 1;
+		background-color: Tomato;
+	}
+	.green{
+		flex: 2;
+	 	background-color: MediumSeaGreen;
+	 }
+	 .blue{
+	 	flex: 1;
+	 	background-color: DodgerBlue;
+	 }
+	 
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="red box">RED</div>
+	<div class="green box">GREEN</div>
+	<div class="blue box">BLUE</div>
+</div>
+</body>
+</html>
