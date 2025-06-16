@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>forEach() 사용법 </title>
+<script>
+ function choiceMenu(){
+ 	let str="";
+	document.querySelectorAll(".menu").forEach((item)=>{
+		if(item.checked) str += item.value+ " ";
+		item.checked = false;
+	});
+
+	if(str=="") alert("하나이상의 메뉴는 선택해 주세요");
+	else alert("당신이 선택한 메뉴는 : " + str); 
+} 
+
+//Lunch Choice 버튼을 클릭하면 main-menu 영역에 있는 id 속성값을 출력
+onload = () => {
+  document.querySelectorAll(".menus").forEach((item) => {
+    item.onclick = function () {
+      // this는 클릭된 .menus 요소
+      let id = this.closest(".main-menu").getAttribute('id');
+      alert(id);
+    }
+  });
+};
+
+</script>
+</head>
+<body>
+<h2>CheckBox Form...</h2>
+<form action="#" name="frm">
+<div class="main-menu" id="lunch">
+	<strong><h3>오늘 점심 메뉴를 모두 선택하세요. </h3></strong>
+	<input type="checkbox" name="menu" value="김치찌개" class="menu">김치찌개<br>
+	<input type="checkbox" name="menu" value="돈까스" class="menu">왕돈까스<br>
+	<input type="checkbox" name="menu" value="인도카레" class="menu">인도카레<br>
+	<input type="checkbox" name="menu" value="비빔밥" class="menu">비빔밥<br><br>
+	<input type="button" value="메뉴선택" onclick="choiceMenu()">
+	
+	<button class="menus">Lunch Choice</button>
+</div>
+
+<div class="main-menu" id="dinenr">
+	<strong><h3>오늘 저녁 메뉴를 모두 선택하세요. </h3></strong>
+	<input type="checkbox" name="menu" value="김치찌개2" class="menu">김치찌개2<br>
+	<input type="checkbox" name="menu" value="돈까스2" class="menu">왕돈까스2<br>
+	<input type="checkbox" name="menu" value="인도카레2" class="menu">인도카레2<br>
+	<input type="checkbox" name="menu" value="비빔밥2" class="menu">비빔밥2<br><br>
+	<input type="button" value="메뉴선택" onclick="choiceMenu()">
+	
+	<button class="menus">Dinner Choice</button>
+</div>
+</form>
+</body>
+</html>

@@ -6,8 +6,38 @@
 </head>
 <script>
 function choiceMenu(){
-	let menu = document.frm.menu;
+/* 	let menu = document.frm.menu;
+	
+	for(let i=0; i < menu.length; i++){
+		if(menu[i].checked) {
+			alert(menu[i].value);
+		}
+	} */
+	
+/* 	let str = "";
+	for(let i=0; i < menu.length; i++){
+		if(menu[i].checked)
+			ster += menu[i].value+ " ";
+	}
+	alert("당신이 선택한 메뉴는 " + str + " 입니다."); */
+	
+	//3 alert창 한번만 뜨고 선택한 메뉴가 한창에 다나오도록
+	// 만약에 메뉴를 하나도 선택하지 않았다면 "하나이상의 메뉸는 꼭 선택 바랍니다"
+	let str = "";
+	for(let i=0; i < menu.length; i++){
+		if(menu[i].checked){
+			str += menu[i].value+ " "
+		};
+	}
+	if(str===""){
+		str="하나이상의 메뉴는 꼭 선택 바랍니다"
+	}else{
+		alert("당신이 선택한 메뉴는 " + str + " 입니다.");
+	}
 }
+
+
+	
 
 </script>
 <body>

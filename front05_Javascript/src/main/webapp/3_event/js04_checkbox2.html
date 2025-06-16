@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>여러값을 선택하는 폼 :: check box select</title>
+</head>
+<script>
+function choiceMenu() {
+	let menus = document.frm.menu;  // 메뉴들을 배열로 받아옴
+	let str = "";
+
+	// 반복문 처리
+	menus.forEach(menu => {
+		if (menu.checked) str += menu.value + " ";
+		menu.checked = false; // 체크 해제
+	});
+
+	// 결과 출력
+	if (str === "") {
+		alert("하나 이상의 메뉴는 선택바랍니다.");
+	} else {
+		alert("당신이 선택한 메뉴는 " + str);
+	}
+}
+
+</script>
+<body>
+<h2>CheckBox Form...</h2>
+<form action="#" name="frm">
+	<strong><h3>내일 점심 메뉴를 모두 선택하세요</h3></strong>
+	<input type="checkbox" name="menu" value="김치찌개"> 김치찌개	<br>
+	<input type="checkbox" name="menu" value="왕돈까스"> 왕돈까스	<br>
+	<input type="checkbox" name="menu" value="인도카레"> 인도카레	<br>
+	<input type="checkbox" name="menu" value="비빔밥"> 비빔밥
+	<input type="button" value="메뉴선택" onclick="choiceMenu()">
+</form>
+</body>
+</html>
