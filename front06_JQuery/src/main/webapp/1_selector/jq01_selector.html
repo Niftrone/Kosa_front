@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html() innerHTML | text() innerText | val() value 을 구분</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+/* Javascript의 onload와 동일
+   $(document).ready({});
+*/
+	$(()=>{
+		// 버튼을 클릭하면 
+		$("button").click(function (){
+			$("p, h2").css("color", "blue")
+			$("p:eq(0)").html("<font color='red'> 첫번째 문장입니다. </font>")
+			$("p:eq(1)").text("<font color='red'> 두번째 문장입니다. </font>")
+			$("p:eq(2)").val("세번째 문장입니다.")
+			$(this).css("display", "none")
+		});
+		// p, h2태그 부분의 글자색이 blue로 바뀌고
+		//첫번째 p태그의 내용은 첫번째 문장입니다로 변경 버튼이 사라지도록
+	});
+</script>
+</head>
+<body>
+	<h2 id="header">	
+		<span>This is a heading</span>
+	</h2>	
+	<p>This is a paragraph.</p>
+	<p class="content">This is another paragraph1.</p>
+	<p class="content theme">This is another paragraph2.</p>	
+	
+	<button>Click me to hide paragraphs</button>
+	<b>이 부분은 bold 하게 출력됩니다.</b>
+</body>
+</html>

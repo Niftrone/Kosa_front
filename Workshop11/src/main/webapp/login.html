@@ -57,9 +57,42 @@
 
   </style>
   <script type="text/javascript">
+  
   	function btn(){
-  		 location.href = "/ws02_front/index.html";
+  		/*자바스크립트에서 특정한 html 페이지로 이동할때*/
+  		event.preventDefault();
+  		location.href = "/Workshop11/index.html";
   	}
+  	
+  	function login(e){
+  		let email = document.querySelector("#email");
+  		let pw = document.querySelector("#password");
+  		let inputs = [email, pw];
+		let flag = true;
+  		for (let i = 0; i < inputs.length; i++) {
+  		  if (inputs[i].value.trim() === "") {
+  		    alert(inputs[i].id + " 값이 없습니다.");
+  		    inputs[i].focus(); 
+  		  	flag = false;
+  		    break;
+  		  }else{
+  			flag = true;
+  		  }
+  		}
+  		if(flag){
+  			alert("모든 정보 입력 완료" + email.value + " " + pw.value);
+  		}
+  		
+  		e.preventDefault();
+  		
+  	}
+  	
+/*   	const myForm = document.querySelector(".myForm");
+  	
+  	myForm.addEventListener('submit', function(event){
+  		event.preventDefault();
+  	}) */
+  	
   </script>
   <title>KB My Life - login</title>
 </head>
@@ -68,16 +101,16 @@
     <nav>
       <ul>
         <li class="nav-item logo"><img src="logo.jpg" alt=""></li>
-        <li class="nav-item">개인</li>
-        <li class="nav-item">기업</li>
-        <li class="nav-item">로그인</li>
-        <li class="nav-item">회원가입</li>
+        <li class="nav-item"><a href="./index.html">개인</a></li>
+        <li class="nav-item"><a href="">기업</a></li>
+        <li class="nav-item"><a href="/Workshop11/login.html">로그인</a></li>
+        <li class="nav-item"><a href="./register.html">회원가입</a></li>
       </ul>
     </nav>
     <div id="banner">지금 당신의 행복! KB Life!</div>
     <div id="login">
       <h1>Login</h1>
-      <form action="">
+      <form action="page" id="myForm">
         <div class="form-item">
           <label for="email">이메일</label>
 		      <input type="text" id="email">
@@ -87,7 +120,8 @@
 		      <input type="password" id="password">
         </div>
         <hr>
-        <button>로그인</button>
+        <!-- input type="submit" -->
+        <button onclick="login(evnet)">로그인</button>
         
         <button type="button" onclick="btn()">홈</button>
       </form>

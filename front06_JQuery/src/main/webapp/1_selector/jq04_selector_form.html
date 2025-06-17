@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+	$(function(){  
+		//입력폼을 선택자로 지정... 폼안에 값을 James로 입력
+		$(()=>{
+			$("[type=text]").val("James");
+			let customer = $("[type=text]").val();
+//			$("#result").html("<h3>입력된 고객이름은 "+customer+" 입니다.</h3>").css("color", "blue")
+			$("#result").html(`<h3>입력된 고객이름은 ${customer} 입니다.</h3>`).css("color", "blue")
+		})
+		//result 영역에 
+		// 입력된 고객이름은 James 입니다. 가 출력 h3 크기로, 색생은 blue
+	});
+</script>
+</head>
+<body>
+	<form action="jq04_result.jsp" method="get">
+		<input type="text" name="name">
+		<input type="submit">
+	</form>
+	<div id="result"></div>
+</body>
+</html>
+
+
+

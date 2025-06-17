@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function changeLine(){
+	// select 폼을 받아와서 subway 변수에 할당
+	let subway = document.getElementById("subway");
+	let text = document.getElementById("result");
+	text.style.color = "blue";
+	// select 폼에서 선택한 값을 alert 창으로 출력 조건으로 하나의 노선을 손택 했다면 출력
+	
+	// 하나의 노선을 선택하지 않았다면 메세지...
+	
+/* 	if(subway.value.trim()==0){
+		alert("...");
+	}else{
+		alert(subway.value + " 호선");
+	} */
+	
+	// 2번을 주석처리 / result영역에 파란글시색깔로 노선이 출력되도록
+	
+	if(subway.value === "0"){
+		text.innerHTML = "...";
+	}else{
+		text.innerHTML = subway.value;
+	} 
+}
+</script>
+</head>
+<body>
+<h2>Select Form</h2>
+	<form action="#" name="frm">
+		<select id="subway" onchange="changeLine()">
+		
+			<option value="0">======= 지하철 호선 ==========</option>
+			<option value="1">1 호선</option>
+			<option value="2">2 호선</option>
+			<option value="3">3 호선</option>
+			<option value="4">4 호선</option>
+			<option value="5">5 호선</option>
+		</select>
+	</form>
+	<a id="result">result</a>
+</body>
+</html>
