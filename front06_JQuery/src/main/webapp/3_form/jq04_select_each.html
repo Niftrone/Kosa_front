@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(function(){
+	$("#addOptionBtn").one("click",function (){
+		let arr = ["우승환", "강민기", "함동윤", "김선호", "장연정"]
+		//2 arr 을 각 요소를 "<option value='우승환'> 우승환 </option>"
+		$.each(arr,(index, item)=>{
+			let option = "<option value="+ item + " > " + item +" </option>";
+			$("#friends").append(option);
+		})
+	});
+	
+	$("#delOptionBtn").on("click",function (){
+		//2 arr 을 각 요소를 "<option value='우승환'> 우승환 </option>"
+		$("#friends>option").remove();
+	});
+});
+</script>
+</head>
+<body>
+<h2>동적으로 폼 생성하기</h2>
+<input type="button" value="옵션 생성" id="addOptionBtn">
+<input type="button" value="옵션 제거" id="delOptionBtn">
+
+<select id="friends">
+</select>
+</body>
+</html>

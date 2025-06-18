@@ -1,0 +1,67 @@
+<!-- 
+브라우저에 데이터를 저장하는 저장소
+WebStorage
+데이터가 저장되는 scope(유효기간)에 따라서 달라진다
+1. LocalStorage -
+   동일한 디바이스, 동일한 브라우저라면 만료기한이 따로 없다
+   웹 페이지가 닫혀지는 것과도 무관함
+   단 객체저장이 안되고 문자열로만 저장이 된다
+   이런 부부능ㄹ 모르고 객체형 데이터(json)를 저장 하려고 하면 낭패를 본다.
+   LocalStorage에 json데이터를 넣고/가져오려면
+   1) json데이터를 직렬화시킨다(serialization) - JSON.stringify
+   2) json데이터를 역직렬화시킨다(deserialization)
+      원래 객체 덩어리로 다시 원상복귀..원본데이터를 그대로 얻는다 - jason.parse
+   객체를 저장하려면??? {"name", "James"} json 
+   
+   API
+   ---------------------------------------------
+   저장			localStorage.setItem("key", "value")
+   삭제			localStorage.removeItem("key");
+   모두삭제		localStorage.clear();
+   조회			localStorage.getItem("key")
+   				localStorage.length
+   
+2. SessionStorage
+   웹 페이지가 닫혀지면 데이터도 없어진다.
+   
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+
+function saveBtn(){
+	localStorage.setItem("key1", "안녕");
+	localStorage.setItem("key2", "Hello");
+	localStorage.setItem("key3", "Bongjur");
+}
+function removeBtn(){
+	localStorage.removeItem("key2");
+}
+function clearBtn(){
+	localStorage.clear();
+}
+function showBtn(){
+	let info = localStorage.getItem("key1")+", "+
+				localStorage.getItem("key2")+", "+
+				localStorage.getItem("key3");
+	
+	alert(info)
+}
+
+</script>
+</head>
+<body>
+<button id="saveBtn" onclick="saveBtn()">저장</button>
+<button id="removeBtn" onclick="removeBtn()">삭제</button>
+<button id="clearBtn" onclick="clearBtn()">모두삭제</button>
+<button id="showBtn" onclick="showBtn()">조회</button>
+</body>
+</html>
